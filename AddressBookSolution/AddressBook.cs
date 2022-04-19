@@ -23,18 +23,8 @@ namespace AddressBookSolution
               PostalCode = Convert.ToInt32(Console.ReadLine()),
               MobileNumber = Convert.ToInt64(Console.ReadLine())
             };
-            Contact address2 = new Contact()
-            {
-                FirstName = Console.ReadLine(),
-                LastName = Console.ReadLine(),
-                Address = Console.ReadLine(),
-                State = Console.ReadLine(),
-                EmailAddress = Console.ReadLine(),
-                PostalCode = Convert.ToInt32(Console.ReadLine()),
-                MobileNumber = Convert.ToInt64(Console.ReadLine())
-            };
+           
             addressBook.Add(address1);
-            addressBook.Add(address2);
         }
         public void AddContactToAddressBook(Contact contact)
         { 
@@ -47,6 +37,18 @@ namespace AddressBookSolution
             Console.WriteLine(contact.FirstName+" "+contact.LastName+" "+contact.Address+" "+contact.State+" "+contact.EmailAddress+" "+" "+contact.PostalCode+" "+contact.MobileNumber  );
             }
         }
-        
+        public void DeletingContactINAddressBook(string name)
+        {
+            Contact delete = new Contact();
+            foreach (var contact in addressBook)
+            {
+                if (contact.FirstName.Equals(name))
+                {
+                    delete = contact;
+                }
+            }
+            addressBook .Remove(delete);
+            Display();
+        }
     }
 }
