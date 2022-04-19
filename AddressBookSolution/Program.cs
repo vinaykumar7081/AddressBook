@@ -5,7 +5,7 @@ class program
     public static void Main(String[] args)
     {
         Console.WriteLine("Enter the Address Details");
-    AddressBook address=new AddressBook();
+    AddressBookContact address=new AddressBookContact ();
         address.FirstName =Console.ReadLine();
         address.LastName =Console.ReadLine();
         address.Address=Console.ReadLine();
